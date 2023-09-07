@@ -4,15 +4,18 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="/liveon-web/assets/css/home.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="header1.jsp"></jsp:include>
 <main>
         <div class="home-top">
             <div class="home-gallery">
-                <img src="../../assets/New_collection/BG-Collection/homebackgroundImage-min.jpg" alt="">
+                <img src="/liveon-web/assets/images/homebackgroundImage-min.jpg" alt="">
                 <!-- <img src="../../assets/New_collection/BG-Collection/vecteezy_car-broke-down-at-road-driver-stand-at-open-hood_14438865.jpg" alt="background image"> -->
                 <div class="home-over">
                     <div class="home-contend">
@@ -108,7 +111,7 @@
                 <div class="progress">
                     <div class="timing">
                         <div class="pic-item">
-                            <img src="../../assets/Icons/sands-of-time.png" alt="book time">
+                            <img src="/liveon-web/assets/images/sands-of-time.png" alt="book time">
                         </div>
                         <div class="dec-part">
                             <h4>Less Time Consuming</h4>
@@ -117,7 +120,7 @@
                     </div>
                     <div class="timing">
                         <div class="pic-item">
-                            <img src="../../assets/Icons/envelope.png" alt="book time">
+                            <img src="/liveon-web/assets/images/envelope.png" alt="book time">
                         </div>
                         <div class="dec-part">
                             <h4>Easy Service Appointments</h4>
@@ -126,7 +129,7 @@
                     </div>
                     <div class="timing">
                         <div class="pic-item">
-                            <img src="../../assets/Icons/hand-holding-cellphone-to-take-a-selfie.png" alt="book time">
+                            <img src="/liveon-web/assets/images/hand-holding-cellphone-to-take-a-selfie.png" alt="book time">
                         </div>
                         <div class="dec-part">
                             <h4>Wait & Relax</h4>

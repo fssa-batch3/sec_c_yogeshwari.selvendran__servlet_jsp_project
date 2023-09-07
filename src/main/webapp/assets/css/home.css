@@ -39,7 +39,7 @@ body{
     --complain-hover-color: #d12616;
 }
 
-nav{
+header{
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     display: flex;

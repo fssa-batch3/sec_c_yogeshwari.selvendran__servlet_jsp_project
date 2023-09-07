@@ -17,7 +17,7 @@ import com.fssa.liveon.exceptions.DAOException;
 import com.fssa.liveon.model.SparePart;
 import com.fssa.liveon.service.SparePartService;
 
-@WebServlet("/UpdateServlet")
+@WebServlet("/UpdateSparePart")
 public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -45,7 +45,7 @@ public class UpdateServlet extends HttpServlet {
 		
 		SparePart sparepart = new SparePart(Integer.parseInt(sparePartId1),sparePartVehicleType,sparePartName , Double.parseDouble(sparePartPrice), Integer.parseInt(sparePartRating), validImages, sparePartDescription);
 		try {
-			if(sp.addSparePart(sparepart)) {
+			if(sp.updateSparePart(sparepart)) {
 				out.append("<h1>success</h1>");
 				System.out.println("successful");
 			}

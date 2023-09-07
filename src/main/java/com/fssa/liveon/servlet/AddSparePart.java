@@ -52,7 +52,7 @@ public class AddSparePart extends HttpServlet {
 		SparePartService sp = new SparePartService();
 		
 		SparePart product = new SparePart(sparePartVehicleType,sparePartName , Double.parseDouble(sparePartPrice), Integer.parseInt(sparePartRating), validImages, sparePartDescription);
-		
+		System.out.println(product);
 		try {
 			if(sp.addSparePart(product)) {
 				out.append("<h1>success</h1>");
@@ -70,7 +70,7 @@ public class AddSparePart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+	//	doGet(request, response);
 	}
 	
 }

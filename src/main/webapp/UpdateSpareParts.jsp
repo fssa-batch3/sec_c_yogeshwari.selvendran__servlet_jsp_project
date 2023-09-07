@@ -48,7 +48,6 @@
 							name="Spare_part_rating" value="<%=spDetails.getRating()%>" required>
 					</div>
 				</div>
-
 			</div>
 			<br>
 			<br>
@@ -97,8 +96,7 @@
 			<div class="buttons">
 				<button type="submit" class="pr_btn" id="sub">Update</button>
 				
-				<!-- <button type="button" class="pr_btn" id="edit">EDIT</button>
-                    <button type="button" class="pr_btn" id="delete">DELETE</button> -->
+			
 			</div>
 		</div>
 

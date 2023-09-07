@@ -4,6 +4,9 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/liveon-web/assets/css/liveon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 <meta charset="ISO-8859-1">
 <title>Live-On index page</title>
 </head>
@@ -100,17 +103,17 @@
                 <h1>Why Chose Us?</h1>
                 <div class="item-gallary">
                     <div class="item">
-                        <img class="pic" src="./assets/New_collection/Wavy_Bus-27_Single-06.jpg" alt="">
+                        <img class="pic" src="/liveon-web/assets/images/Wavy_Bus-27_Single-06.jpg" alt="">
                         <h4>24/7 support</h4>
                         <p>Now, you will get your bike serviced/repaired in commenced time</p>
                     </div>
                     <div class="item1">
-                        <img class="pic" src="./assets/New_collection/Wavy_Trv-01_Single-10.jpg" alt="">
+                        <img class="pic" src="/liveon-web/assets/images/Wavy_Trv-01_Single-10.jpg" alt="">
                         <h4>Real-time tracking</h4>
                         <p>You can book your bike service from home, office or anywhere on move</p>
                     </div>
                     <div class="item2">
-                        <img class="pic" src="./assets/New_collection/Wavy_Cst-01_Single-02.jpg" alt="">
+                        <img class="pic" src="/liveon-web/assets/images/Wavy_Cst-01_Single-02.jpg" alt="">
                         <h4>Door step service</h4>
                         <p>While bike is being serviced/repaired, Sit back and relax at your place</p>
                     </div>
@@ -134,7 +137,7 @@
                     <h5>- VHISHALI</h5>
                 </div>
                 <div class="love-us">
-                    <img src="./assets/New_collection/new-bee.png" alt="">
+                    <img src="/liveon-web/assets/images/new-bee.png" alt="">
                 </div>
             </div>
         </div>
@@ -145,25 +148,25 @@
             <div class="brand-alining">
                 <div id="boxs" class="box1">
 
-                    <img src="./assets/New_collection/TOYOTA.png" alt="">
-                    <img src="./assets/New_collection/SKODA.png" alt="">
+                    <img src="/liveon-web/assets/images/TOYOTA.png" alt="">
+                    <img src="/liveon-web/assets/images/SKODA.png" alt="">
 
                 </div>
                 <div id="boxs" class="box2">
-                    <img src="./assets/New_collection/MITSUBISHI.png" alt="">
-                    <img src="./assets/New_collection/RENAULT.png" alt="">
+                    <img src="/liveon-web/assets/images/MITSUBISHI.png" alt="">
+                    <img src="/liveon-web/assets/images/RENAULT.png" alt="">
 
                 </div>
                 <div id="boxs" class="box3">
-                    <img src="./assets/New_collection/nissan.png" alt="">
-                    <img src="./assets/New_collection/VOLKSWAGEN.png" alt="">
+                    <img src="/liveon-web/assets/images/nissan.png" alt="">
+                    <img src="/liveon-web/assets/images/VOLKSWAGEN.png" alt="">
 
                 </div>
                 <div id="boxs" class="box4">
-                    <img src="./assets/New_collection/MAHINDRA.png" alt="">
-                    <img src="./assets/New_collection/kia.png" alt="">
-                    <img src="./assets/New_collection/MGP.png" alt="">
-                    <img src="./assets/New_collection/Tata.png" alt="">
+                    <img src="/liveon-web/assets/images/MAHINDRA.png" alt="">
+                    <img src="/liveon-web/assets/images/kia.png" alt="">
+                    <img src="/liveon-web/assets/images/MGP.png" alt="">
+                    <img src="/liveon-web/assets/images/Tata.png" alt="">
                 </div>
             </div>
             <div class="brand">
