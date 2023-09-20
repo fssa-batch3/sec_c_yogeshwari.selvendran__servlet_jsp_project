@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,19 +48,24 @@ PrintWriter out = response.getWriter();
 		}
 		else {
 		 try {
-	            User user = gws.getUserByEmail(email, pass);
+	            User user = gws.getUserByEmailAndPassword(email, pass);
 	            if (user != null) {
 	                HttpSession session = request.getSession();
 	                session.setAttribute("loginUser", user);
+	                System.out.println("success");
 	                response.sendRedirect("/liveon-web/home.jsp");
 	                out.print("<h3>Mental</h3>");
-	                System.out.println("sucess");
+
+	                System.out.println(session.getId());
 	            } else {
 	                request.setAttribute("message", "Invalid email or password.");
 	                request.getRequestDispatcher("login.jsp").forward(request, response);
 	            }
 	        } catch (DAOException | SQLException e) {
 	            e.printStackTrace();
+	          //  response.sendRedirect("/liveon-web/home.jsp");
+	         //  response.sendRedirect("/ProfileServelt");
+	    		
 	        }
 		}
 	}

@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="header1.jsp"></jsp:include>
+	<jsp:include page="header.jsp"></jsp:include>
 <main>
         <div class="home-top">
             <div class="home-gallery">
@@ -20,7 +20,7 @@
                 <div class="home-over">
                     <div class="home-contend">
                         <h1>MAINTENANCE & REPAIR SERVICE</h1>
-                        <p>Promotors is one of the leading units specializing in providing car and bike care equipment and tools
+                        <p>Promoters is one of the leading units specializing in providing car and bike care equipment and tools
                             worldwide.</p>
                         <span> Need to buy car or bike care tools or accessories, this will be a useful choice. </span><br>        
                     </div>

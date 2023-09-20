@@ -33,17 +33,18 @@ public class registrationServlet extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
-		String userFirstName = request.getParameter("User_First_Name");
-		String userLastName = request.getParameter("User_Last_Name");
-		String userGender = request.getParameter("User_Gender");
-		String userEmail = request.getParameter("User_Email");
-		String userPassword = request.getParameter("User_Password");
-		String userMobileNumber = request.getParameter("User_Mobile");
+		String userFirstName = request.getParameter("user_first_name");
+		String userLastName = request.getParameter("user_last_name");
+		String userGender = request.getParameter("gender");
+		String userEmail = request.getParameter("user_email");
+		String userPassword = request.getParameter("user_password");
+		String userMobileNumber = request.getParameter("user_number");
 		System.out.println(userMobileNumber);
 
 		UserService user = new UserService();
 		User users = new User(userFirstName, userLastName, userGender, userEmail, Long.parseLong(userMobileNumber),
 				userPassword);
+		System.out.println(users);
 		try {
 			if (user.addUser(users)) {
 				out.append("<h1>success</h1>");
@@ -52,9 +53,8 @@ public class registrationServlet extends HttpServlet {
 		} catch (DAOException | SQLException e) {
 			e.printStackTrace();
 		}
-		RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/ProfileServelt");
-		dispatcher.forward(request, response);
-	}
+		response.sendRedirect(request.getContextPath() + "/login.jsp");
+		}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

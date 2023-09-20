@@ -84,10 +84,8 @@
 				<div class="high-pro1">
 					<div>
 						<label id="add2">Description</label><br>
-						<br> <input type="text" id="description"
-							name="Spare_part_description" value="<%=spDetails.getDescription()%>" required>
+						<br> <input type="text" id="description" name="Spare_part_description" value="<%=spDetails.getDescription()%>" required>
 					</div>
-
 				</div>
 			</div>
 			<br>

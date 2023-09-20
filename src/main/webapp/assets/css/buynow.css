@@ -1,0 +1,259 @@
+@charset "ISO-8859-1";
+ *,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+ul {
+  padding-left: 10px;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  color: #0a0a0a;
+  line-height: 1.4;
+}
+
+a {
+  color: #000;
+}
+
+.content {
+  z-index: 9999;
+}
+
+.secure,
+.backBtn {
+  display: flex;
+  align-items: flex-end;
+}
+.secure span,
+.backBtn span {
+  margin-left: 5px;
+}
+
+.backBtn {
+  margin-top: 20px;
+}
+
+.secure {
+  color: #afb5c0;
+}
+.secure .icon {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.logo .icon {
+  font-size: 32px;
+  line-height: 32px;
+  margin-right: 5px;
+}
+
+img {
+  width: 100%;
+  border-radius: 8px 0 0 8px;
+}
+
+.details {
+  max-width: 800px;
+  min-height: 300px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.details__item {
+  display: flex;
+}
+.details__user {
+  background: #f6f9fc;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #dadada;
+}
+
+.item__quantity {
+  position: absolute;
+  right: 50px;
+  top: 30px;
+  font-size: 20px;
+}
+.item__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item__image .iphone {
+  margin-top: -50px;
+  margin-left: -100px;
+  width: 200px;
+}
+.item__details {
+  padding: 30px;
+}
+.item__title {
+  font-size: 28px;
+  font-weight: 600;
+}
+.item__price {
+  font-size: 22px;
+  color: #bec3cb;
+}
+
+.icon {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+header {
+  background-color: #f6f9fc;
+  min-height: 500px;
+  background-image: url("../images/pattern.png");
+}
+
+.container {
+  width: 1300px;
+  margin-left: 180px;
+}
+
+.shadow {
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.row {
+  display: flex;
+}
+
+.txt {
+  border-color: #e1e8ee;
+  width: 100%;
+}
+
+.input {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  height: 48px;
+  padding-left: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #5e6977;
+}
+
+input[type="text"] {
+  display: initial;
+  padding: 15px;
+}
+
+.text-validated {
+  border-color: #7dc855;
+  background-image: url("../images/icon-tick.png");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+}
+
+.ddl {
+  border-color: #f0f4f7;
+  background-color: #f0f4f7;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+
+.field {
+  padding-top: 15px;
+  padding-right: 30px;
+  width: 50%;
+}
+.field.small {
+  width: auto;
+}
+
+.notification {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+.notification .icon {
+  font-size: 28px;
+  color: #7dc855;
+  line-height: 28px;
+  margin-right: 10px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 0 40px 0;
+}
+
+.payment {
+  margin-top: 2%;
+  height: auto;
+  width: fit-content;
+  border: solid 1px rgba(197, 194, 194, 0.559);
+  padding-bottom: 50px;
+}
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 200px;
+  margin-left: 50px;
+}
+.cards ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 350px;
+}
+.cards ul li img {
+  height: 50px;
+}
+.pay-card label {
+  font-size: 17px;
+  font-weight: bold;
+}
+#cash_pay {
+  margin-top: 50px;
+}
+.pay-card label input {
+  height: 18px;
+  width: 18px;
+  margin-right: 2%;
+}
+.cards p {
+  font-size: 17px;
+  padding-left: 29px;
+}
+.cash {
+  margin-left: 50px;
+}
+.chan-btn .pr-btn {
+  margin-left: 80px;
+  margin-top: 30px;
+  padding: 15px 30px;
+  letter-spacing: 1px;
+}
+.input_form {
+  margin-bottom: 6rem;
+}

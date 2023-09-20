@@ -1,9 +1,7 @@
 package com.fssa.liveon.servlet;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,23 +9,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.fssa.liveon.exceptions.DAOException;
-import com.fssa.liveon.model.User;
-import com.fssa.liveon.service.UserService;
-
 /**
- * Servlet implementation class ProfileServelt
+ * Servlet implementation class LogoutServlet
  */
-@WebServlet("/ProfileServelt")
-public class ProfileServelt extends HttpServlet {
-	private static final long serialVersionUID = 1L;       
+@WebServlet("/LogoutServlet")
+public class LogoutServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProfileServelt() {
+    public LogoutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -35,25 +31,23 @@ public class ProfileServelt extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-
 		HttpSession session = request.getSession(false);
-		User login = (User)session.getAttribute("loginUser");
-		int id=login.getUserId();
-		System.out.println(id+"vada");
-		
-		
-		UserService us = new UserService();
-		try {
-			User userDetails = us.getUserById(id);
-			request.setAttribute("UserDetails", userDetails);
-		} catch (DAOException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
+
+		if (session != null) {
+			session.removeAttribute("loginUser");
+			System.out.println("Existing Session User ID:" + session.getId());
+
+			// invalidate removes all the session attributes
+			session.invalidate();
+			System.out.println("loggeed out ");
+
 		}
-		RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/profile.jsp");
-		dispatcher.forward(request, response);
+		else {
+			System.out.println("No Session Exists");
+		}
+		
+		// Redirecting to login page since we have logged out
+		response.sendRedirect("index.jsp");
 	}
 
 	/**

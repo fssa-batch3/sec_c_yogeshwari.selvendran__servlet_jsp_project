@@ -7,7 +7,7 @@
 <title>Live-on</title>
 </head>
 <body>
-	<%!public static final String GET_ALL_SPAREPARTS_DETAILS = "/liveon-web/GetAllSparePartsList";%>
+	<%!public static final String GET_ALL_SPAREPARTS_DETAILS = "/liveon-web/OrdersHistoryServlet";%>
 	<h3>Test SpareParts Details</h3>
 	<a href=<%=GET_ALL_SPAREPARTS_DETAILS%>>Get SpareParts List</a>
 </body>

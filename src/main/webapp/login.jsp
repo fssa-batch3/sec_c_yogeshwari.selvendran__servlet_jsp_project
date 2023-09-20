@@ -9,28 +9,47 @@
 <title>Insert title here</title>
 </head>
 <body>
+  <div class="wrapper">
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-6 side-image">
+                       
+                <!-------------      image   ------------->
+                
+                <img src="/liveon-web/assets/images/sign-in-page.jpg" alt="">   
+                <div class="text">
+                    <p>Join the community of developers <i>ludiflex</i></p>
+                </div>
+                
+            </div>
 
-	<section class="login">
-		<div class="login_box">
-			<div class="left">
-				<div class="top_link">
-					<a href="#"><img
-						src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download"
-						alt="">Return home</a>
-				</div>
-				<div class="contact">
-					<form action="userLogin" method="post">
-						<h3>SIGN IN</h3>
-						<input type="email" placeholder="USER EMAIL" name="User_Email"
-							required autofocus>
-							 <input type="password" placeholder="USER PASSWORD" name="User_Password" required>
-						<button type="submit" class="submit">Login in</button>
-					</form>
-
-				</div>
-			</div>
-		</div>
-	</section>
-
+            <div class="col-md-6 right">
+                
+                <div class="input-box">
+                   
+                   <header>Create account</header>
+                   <form action="userLogin" method="post">
+                   <div class="input-field">
+                    <input type="email"name="User_Email"
+                    required autofocus class="input" id="email">
+                        <label for="email">Email</label> 
+                    </div> 
+                   <div class="input-field">
+                    <input type="password" name="User_Password" required class="input" id="pass">
+                        <label for="pass">Password</label>
+                    </div> 
+                   <div class="input-field">
+                        
+                    <button type="submit" class="submit">Login</button>
+                   </div> 
+                </form>
+                   <div class="signin">
+                    <span>Already have an account? <a href="#">Log in here</a></span>
+                   </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
