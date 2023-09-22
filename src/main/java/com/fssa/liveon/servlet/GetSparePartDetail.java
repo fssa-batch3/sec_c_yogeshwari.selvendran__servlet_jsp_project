@@ -38,8 +38,7 @@ public class GetSparePartDetail extends HttpServlet {
             SparePart selectedSparePartDetail = sp.getSparePartDetailById(Integer.parseInt(selectedSparepartId)); 
             request.setAttribute("SelectedSparePartDetail", selectedSparePartDetail);
             System.out.println("Selected Sparepart: " + selectedSparePartDetail); 
-            
-            
+ 
         }
 		
 		} catch (DAOException e) {
@@ -50,9 +49,6 @@ public class GetSparePartDetail extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

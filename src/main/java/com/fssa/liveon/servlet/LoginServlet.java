@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,60 +18,49 @@ import com.fssa.liveon.service.UserService;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/userLogin")
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public LoginServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-PrintWriter out = response.getWriter();
-		
+		PrintWriter out = response.getWriter();
 
 		String email = request.getParameter("User_Email");
 		String pass = request.getParameter("User_Password");
-		UserService gws=new UserService();
-		if(email.equals("admin@gmail.com")&& pass.equals("Admin@123")) {
+		UserService gws = new UserService();
+		if (email.equals("admin@gmail.com") && pass.equals("Admin@123")) {
 			response.sendRedirect("/liveon-web/GetAllSparePartsList");
-		}
-		else {
-		 try {
-	            User user = gws.getUserByEmailAndPassword(email, pass);
-	            if (user != null) {
-	                HttpSession session = request.getSession();
-	                session.setAttribute("loginUser", user);
-	                System.out.println("success");
-	                response.sendRedirect("/liveon-web/home.jsp");
-	                out.print("<h3>Mental</h3>");
-
-	                System.out.println(session.getId());
-	            } else {
-	                request.setAttribute("message", "Invalid email or password.");
-	                request.getRequestDispatcher("login.jsp").forward(request, response);
-	            }
-	        } catch (DAOException | SQLException e) {
-	            e.printStackTrace();
-	          //  response.sendRedirect("/liveon-web/home.jsp");
-	         //  response.sendRedirect("/ProfileServelt");
-	    		
-	        }
+		} else {
+			try {
+				User user = gws.getUserByEmailAndPassword(email, pass);
+				if (user != null) {
+					// Login successful
+					HttpSession session = request.getSession();
+					session.setAttribute("loginUser", user);
+					System.out.println("success");
+					response.sendRedirect("/liveon-web/home.jsp");
+					out.print("<h3>Mental</h3>");
+					System.out.println(session.getId());
+				} else {
+					// Login failed
+					request.setAttribute("message", "Invalid email or password.");
+//					request.setAttribute("password",);
+					request.getRequestDispatcher("/liveon-web/error.jsp").forward(request, response);
+				}
+			} catch (DAOException | SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

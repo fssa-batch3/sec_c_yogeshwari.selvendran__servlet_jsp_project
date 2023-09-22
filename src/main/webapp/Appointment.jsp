@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="com.fssa.liveon.model.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,9 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 <main>
+	<%
+	User user = (User) session.getAttribute("loginUser");
+	%>
         <!-- This is appoinment page -->
         <div class="appoinment">
             <!-- <img src="../../assets/New_collection/BG-Collection/vecteezy_car-repair-service-min.jpg" alt=""> -->
@@ -20,22 +24,23 @@
         <!-- Booking appoinment -->
 
         <div class="app-align" id="app-book">
-            <form>
+            <form action="bookingAppointment" method="post">
                    
                 <!-- This is appoinment section -->
                 <div class="appoinment-section">
+                						<input type="hidden" name="userId" value="<%=user.getUserId()%>">
                     <div class="date">
                         <!-- This is choose the appointment date -->
                         <div class="date-choose">
                             <label for="appointment-date" class="top-head">APPOINTMENT DATE</label><br>
-                            <input id="date" type="date" required aria-label="date">
+                            <input id="date" type="date" name="booking_date" required aria-label="date">
                         </div><br>
                         <!-- This is choose the appointment time -->
                         <div class="date-choose">
                             <label for="appointment-date" class="top-head">PREFFERED TIME FRAME</label><br>
                             <!-- <input id="time" type="time" required aria-label="time" required> -->
 
-                            <input type="time" id="time" required placeholder="12:00">
+                            <input type="time" id="time" name="booking_time" required placeholder="12:00">
                         </div><br>
                         <!-- This is choose the appointment vehicle type -->
                         <div class="type-choose">
@@ -44,9 +49,7 @@
                                 <label for="vehicle-type" id="bike">
                                     <input type="radio" id="vehicle-type" name="vehicle-type" value="Bike">BIKE
                                 </label>
-                                <label for="vehicle-type1" id="car">
-                                    <input type="radio" id="vehicle-type1" name="vehicle-type" value="Car">CAR
-                                </label>
+                             
                             </div>
                         </div><br>
                         <!-- This is choose the appointment servicde -->
@@ -99,15 +102,15 @@
                     </div>
                     <div class="addres">
                         <label for="" class="top-head">CONTACT DETAILS</label><br>
-                        <input type="text" id="contactphone" placeholder="Your Phone" maxlength="10" required
-                        pattern="^[6-9][0-9]{9}$" aria-label="Phone"><br>
-                        <input type="text" id="home-num" placeholder="H.no/P.no"  required aria-label="hno"><br>
-                        <input type="text" id="home-street" placeholder="Street"  required aria-label="street"><br>
-                        <input type="text" id="home-city" placeholder="City" required aria-label="city"><br>
-                        <input class="name" id="home-state" type="text"  name="user address"
-                            placeholder="State" required="true">
-                        <input class="name" id="address" type="text" pattern="^6\d{5}$" name="user address"
-                            placeholder="Pincode" required="true">
+                        <input id="contactphone"placeholder="Street" type="text"
+										name="Street" required
+                        ><br>
+                        <input id="home-num" placeholder="City" type="text"
+										name="City" required ><br>
+        
+                        <input class="name" id="home-state" placeholder="Pincode"
+										type="text" name="pincode" >
+                
                         <br>
                         <button type="submit">SUBMIT NOW</button>
                         <!-- <button>SUBMIT NOW</button> -->

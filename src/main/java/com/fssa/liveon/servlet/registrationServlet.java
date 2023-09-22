@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,7 +31,6 @@ public class registrationServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 
 		PrintWriter out = response.getWriter();
-
 		String userFirstName = request.getParameter("user_first_name");
 		String userLastName = request.getParameter("user_last_name");
 		String userGender = request.getParameter("gender");

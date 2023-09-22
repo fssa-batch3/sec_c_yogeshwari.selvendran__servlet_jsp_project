@@ -3,53 +3,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css"
-	href="/liveon-web/assets/css/registration.css">
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<!-- displays site properly based on user's device -->
+<link rel="stylesheet" href="/liveon-web/assets/css/registration.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+	integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>Live-On_signin_page</title>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="container main">
-        <div class="row">
-            <div class="col-md-6 side-image">
-                       
-                <!-------------      image   ------------->
-                
-                <img src="/liveon-web/assets/images/sign-in-page.jpg" alt="">   
-                <div class="text">
-                    <p>Join the community of developers <i>ludiflex</i></p>
-                </div>
-                
-            </div>
 
-            <div class="col-md-6 right">
-                
-                <div class="input-box">
-                   
-                   <header>Create account</header>
-                   <form action="userLogin" method="post">
-                   <div class="input-field">
-                    <input type="email"name="User_Email"
-                    required autofocus class="input" id="email">
-                        <label for="email">Email</label> 
-                    </div> 
-                   <div class="input-field">
-                    <input type="password" name="User_Password" required class="input" id="pass">
-                        <label for="pass">Password</label>
-                    </div> 
-                   <div class="input-field">
-                        
-                    <button type="submit" class="submit">Login</button>
-                   </div> 
-                </form>
-                   <div class="signin">
-                    <span>Already have an account? <a href="#">Log in here</a></span>
-                   </div>
-                </div>  
-            </div>
-        </div>
-    </div>
-</div>
+	<div class="container">
+		<!--     <img src="../assets/images/shape.png" class="square" alt="icon" /> -->
+		<header>
+			<p>Login Form
+		</header>
+		<form action="LoginServlet" method="post" class="form">
+
+			<div class="input-box">
+				<label>Email Address</label> <input type="text" name="User_Email"
+					placeholder="Enter email address" required />
+			</div>
+			<div class="input-box">
+				<label>Password</label> <input type="password" name="User_Password"
+					placeholder="Enter your password" required />
+			</div>
+			<button type="submit">Submit</button>
+		</form>
+		<div class="signin">
+			<span>Create a Account?<a href="./registration.jsp">Sign up here</a></span>
+		</div>
+	</div>
+
 </body>
 </html>

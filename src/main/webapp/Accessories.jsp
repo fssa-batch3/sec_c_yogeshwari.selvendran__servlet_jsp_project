@@ -18,14 +18,14 @@
         <!-- Accessories -->
         <div class="accessories">
             <div class="head-part">
-                <img src="../../assets/New_collection/Acc-cover.png" alt="">
+                <img src="./assets/images/Acc-cover.png" alt="">
             </div>
             <div class="side-item">
                 <div class="top-pic">
-                    <img src="../../assets/New_collection/Acc-sub-cover.png" alt="">
+                    <img src="./assets/images/Acc-sub-cover.png" alt="">
                 </div>
                 <div class="sec-pic">
-                    <img src="../../assets/New_collection/Acc-sub-cover2.png" alt="">
+                    <img src="./assets/images/Acc-sub-cover2.png" alt="">
                 </div>
             </div>
         </div>

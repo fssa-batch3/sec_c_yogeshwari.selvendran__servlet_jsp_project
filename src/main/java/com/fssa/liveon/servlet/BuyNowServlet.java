@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,7 +50,9 @@ System.out.println(spareId+"datsd2");
 			} catch (DAOException | SQLException e) {
 				e.printStackTrace();
 			}
-			response.sendRedirect(request.getContextPath() + "/home.jsp");
+			response.sendRedirect("home.jsp");
+//			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/liveon-web/OrdersHistoryServlet");
+//			dispatcher.forward(request, response);
 			}
 //		Orders order = new Orders(Integer.parseInt(userId),Integer.parseInt(userId),streets,city,pincode,paymentMethod);
 	

@@ -12,44 +12,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fssa.liveon.exceptions.DAOException;
-import com.fssa.liveon.model.Orders;
-import com.fssa.liveon.model.SparePart;
-import com.fssa.liveon.service.OrderService;
-import com.fssa.liveon.service.SparePartService;
+import com.fssa.liveon.model.Appointment;
+import com.fssa.liveon.service.AppointmentService;
 
-@WebServlet("/OrdersHistoryServlet")
-public class OrdersHistoryServlet extends HttpServlet {
+
+@WebServlet("/AppointmentHistory")
+public class AppointmentHistory extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public OrdersHistoryServlet() {
+  
+    public AppointmentHistory() {
         super();
 
     }
 
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		OrderService os = new OrderService();
-		SparePartService sps = new SparePartService();
-//		SparePartsDAO spd = new SparePartsDAO();
-//		SparePartService sp = new SparePartService();
+		AppointmentService as = new AppointmentService();
 		try {
-			List<Orders> orderlist = os.getOrdersByUserId();
-			for (Orders order : orderlist) {
-		        int sparePartId = order.getSparepartId();
-		        SparePart sparePart = sps.getSparePartDetailById(sparePartId);
-		        order.setSparepart(sparePart);
-		    }
-			request.setAttribute("OrderslistByUserId", orderlist);
-			
+			List<Appointment> bookinglist = as.getAppointmentsByUserId();
+			for(Appointment appointment: bookinglist) {
+				request.setAttribute("AppointmentDetails", bookinglist);
+			}	
 		} catch (DAOException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
-			
 			e.printStackTrace();
 		}
-		RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/OrderHistory.jsp");
+		RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/UserAppointment.jsp");
 		dispatcher.forward(request, response);
 	}
 
