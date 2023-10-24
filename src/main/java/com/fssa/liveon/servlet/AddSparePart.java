@@ -17,29 +17,16 @@ import com.fssa.liveon.exceptions.DAOException;
 import com.fssa.liveon.model.SparePart;
 import com.fssa.liveon.service.SparePartService;
 
-/**
- * Servlet implementation class AddSparePart
- */
 @WebServlet("/spartpartadd")
 public class AddSparePart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+  
     public AddSparePart() {
         super();
-        // TODO Auto-generated constructor stub
     }
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		PrintWriter out = response.getWriter();
-	
+		PrintWriter out = response.getWriter();	
 		String sparePartName = request.getParameter("Spare_part_name");
 		String sparePartVehicleType = request.getParameter("Spare_part_type");
 		String sparePartPrice = request.getParameter("Spare_part_price");
@@ -65,12 +52,9 @@ public class AddSparePart extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	//	doGet(request, response);
+	
+		doGet(request, response);
 	}
 	
 }

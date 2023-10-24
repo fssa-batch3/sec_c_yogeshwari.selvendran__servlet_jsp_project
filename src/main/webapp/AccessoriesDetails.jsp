@@ -6,13 +6,13 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css"
-	href="/liveon-web/assets/css/SparePartDetails.css">
+	href="/liveon-web/assets/css/Accessories.css">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	<main>
-		<h3>Spare Part details</h3>
 		<%
 		SparePart spDetails = (SparePart) request.getAttribute("SelectedSparePartDetail");
 		%>
@@ -62,13 +62,12 @@
 				</div>
 
 				<div class="list-btn">
-					<a href="/liveon-web/EditSparePartServlet?spartPartId=<%=spDetails.getId()%>">
-					<button id="add_card">Add To Cart</button></a>
-					 <a href="/liveon-web/SparePartIdServlet?spartPartId=<%=spDetails.getId()%>" id="order-nav">
-
-						<button id="buy_now">Buy Now</button>
+					<a
+						href="/liveon-web/SparePartIdServlet?spartPartId=<%=spDetails.getId()%>"
+						id="order-nav">
+						<button id="buy_now" >Buy Now</button>
 					</a>
-				</div>
+				</div>	
 			</div>
 		</div>
 

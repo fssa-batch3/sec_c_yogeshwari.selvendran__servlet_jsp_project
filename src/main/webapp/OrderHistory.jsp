@@ -35,7 +35,7 @@
                             <span>Orders</span></a>
                     </li>
                     <li>
-                        <a href="../../Page/User-Profile/user-appointment.html" class="active"  id="appointment1"><span class="fa-solid fa-calendar-check"></span>
+                        <a href="/liveon-web/AppointmentHistory" class="active"  id="appointment1"><span class="fa-solid fa-calendar-check"></span>
                             <span>Appointments</span></a>
                     </li>
            
@@ -43,10 +43,7 @@
                         <a href="/liveon-web/LogoutServlet" id="log" class="active"><span class="fa-solid fa-right-from-bracket"></span>
                             <span id="log">Logout</span></a>
                     </li>
-                    <li>
-                        <a href="../../Page/Home/home.html" class="active"><span class="fa-solid fa-left-long"></span>
-                            <span>Exit</span></a>
-                    </li>
+                  
 
                 </ul>
             </div>

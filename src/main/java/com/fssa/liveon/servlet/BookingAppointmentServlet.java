@@ -5,13 +5,17 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.fssa.liveon.builder.AppointmentBuilder;
 import com.fssa.liveon.exceptions.DAOException;
+import com.fssa.liveon.exceptions.InvalidBookingDetailException;
 import com.fssa.liveon.model.Appointment;
 import com.fssa.liveon.service.AppointmentService;
 
@@ -60,11 +64,15 @@ public class BookingAppointmentServlet extends HttpServlet {
 				    .build();
 		try {
 			if(appointment.addAppointment(booking1)) {
-				out.append("<h1>success</h1>");
+				//out.append("<h1>success</h1>");
 				System.out.println("successful  bookedsdddd");
+				// response.sendRedirect("/liveon-web/AppointmentHistory");
 			}
-		}catch (DAOException | SQLException e) {
+		}catch (DAOException | SQLException |InvalidBookingDetailException e) {
 			e.printStackTrace();
+			request.setAttribute("ErrorMessage", e.getMessage());
+			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/Appointment.jsp");
+			dispatcher.forward(request, response);
 		}
 		response.sendRedirect(request.getContextPath() + "/home.jsp");
 	}

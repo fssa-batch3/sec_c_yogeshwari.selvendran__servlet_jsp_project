@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fssa.liveon.exceptions.DAOException;
+import com.fssa.liveon.exceptions.InvalidOrderDetailsException;
 import com.fssa.liveon.model.Orders;
 import com.fssa.liveon.service.OrderService;
 
@@ -44,13 +45,17 @@ System.out.println(spareId+"datsd2");
 			//System.out.println(orders);
 			try {
 				if (order.placeOrder(orders)) {
-					out.append("<h1>success</h1>");
+					// out.append("<h1>success</h1>");
 					System.out.println("Order successfuly placed");
+					response.sendRedirect("/liveon-web/OrdersHistoryServlet");
 				}
-			} catch (DAOException | SQLException e) {
+			} catch (DAOException | SQLException | InvalidOrderDetailsException e) {
 				e.printStackTrace();
+				request.setAttribute("ErrorMessage", e.getMessage());
+				RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/buynow.jsp");
+				dispatcher.forward(request, response);
 			}
-			response.sendRedirect("home.jsp");
+//		response.sendRedirect("home.jsp");
 //			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/liveon-web/OrdersHistoryServlet");
 //			dispatcher.forward(request, response);
 			}

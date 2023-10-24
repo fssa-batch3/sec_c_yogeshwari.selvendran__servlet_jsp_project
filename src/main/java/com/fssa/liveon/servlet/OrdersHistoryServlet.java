@@ -10,10 +10,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fssa.liveon.exceptions.DAOException;
 import com.fssa.liveon.model.Orders;
 import com.fssa.liveon.model.SparePart;
+import com.fssa.liveon.model.User;
 import com.fssa.liveon.service.OrderService;
 import com.fssa.liveon.service.SparePartService;
 
@@ -34,8 +36,13 @@ public class OrdersHistoryServlet extends HttpServlet {
 		SparePartService sps = new SparePartService();
 //		SparePartsDAO spd = new SparePartsDAO();
 //		SparePartService sp = new SparePartService();
+		
+
+		HttpSession session = request.getSession(false);
+		User login = (User)session.getAttribute("loginUser");
+		int id=login.getUserId();
 		try {
-			List<Orders> orderlist = os.getOrdersByUserId();
+			List<Orders> orderlist = os.getOrdersByUserId(id);
 			for (Orders order : orderlist) {
 		        int sparePartId = order.getSparepartId();
 		        SparePart sparePart = sps.getSparePartDetailById(sparePartId);

@@ -313,7 +313,7 @@ span{
 .vehi-cho{
     width: 600px;
     height: 60px;
-    padding: 2px 100px;
+   padding: 2px 270px;
     font-size: 17px;
     border: 1px solid #EBEBEB;
     background: #FFF;
@@ -334,6 +334,7 @@ span{
 }
 #check-Box1{
     display: none;
+    width:300px;
 }
 /* .list-checkbox input{
    width: 15px;
@@ -488,6 +489,9 @@ span{
     background-color: #ff860f;
     color: white;
 }
+.error{
+	color:red;
+}
 /*  This is Footer */
 footer {
     margin-top: 25%;
@@ -588,74 +592,6 @@ footer {
     text-align: center;
     font-size: 110%;
 }
-/* .nj-timepick {
-    position: fixed;
-    right: -100%;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 5000;
-    transition: right 0.7s ease;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-  } */
-
-
-
-
-
-/* In this place I add some css for my customer review text */
-/* .pointer{
-    cursor:pointer;
-  }
-  .accordian-link h3{
-    font-size:clamp(18px,2vw,30px);
-  }
-  .user_image{
-    width:50px;
-    height:50px;
-    object-fit:contain;
-    background:#00000030;
-    border-radius:50%;
-    padding:.20rem;
-  }
-  .review_answer{
-    max-height:150px;
-    overflow-y:auto;
-  }
-  /*scrollbar width */
-  /* .review_answer::-webkit-scrollbar {
-    width: 10px;
-  } */
-  
-  /*scrollbar Track */
-  /* .review_answer::-webkit-scrollbar-track {
-    background: rgb(189, 190, 189);
-    border-radius: 8px;
-  }
-  
-  .review_answer::-webkit-scrollbar-thumb {
-    background-color: green;
-    outline: 1px solid darkgreen;
-    border-radius: 8px;
-  }  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* This is payment-section */
 /* .payment-section p{
     text-align: center;
@@ -710,14 +646,6 @@ fieldset{
    margin-top: 25px ;
    margin-left: 30px;
 } */
-
-
-
-
-
-
-
-
 
 /* This is confirm -section */
 /* .confirm-section img{

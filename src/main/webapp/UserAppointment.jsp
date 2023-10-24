@@ -42,8 +42,6 @@
 					<li><a href="/liveon-web/LogoutServlet" id="log"
 						class="active"><span class="fa-solid fa-right-from-bracket"></span>
 							<span id="log">Logout</span></a></li>
-					<li><a href="../../Page/Home/home.html" class="active"><span
-							class="fa-solid fa-left-long"></span> <span>Exit</span></a></li>
 
 				</ul>
 			</div>
@@ -55,11 +53,7 @@
 
 					<div class="booking_appoinment">
 						<h1 class="heading">Appointments</h1>
-						<%List<Appointment> bookinglist = (List<Appointment>) request.getAttribute("getAppointmentsByUserId");
-	if(bookinglist != null){
-		for(Appointment appointment: bookinglist){
-	
-	%>
+
 						<div class="upcoming">
 							<table>
 								<thead>
@@ -72,7 +66,13 @@
 									<!-- <th>Edit</th>
                                     <th>Delete</th> -->
 								</thead>
+								<%
+								List<Appointment> bookinglist = (List<Appointment>) request.getAttribute("AppointmentDetails");
+								if (bookinglist != null) {
+									for (Appointment appointment : bookinglist) {
+								%>
 								<tbody class="table_row">
+
 									<td><%=appointment.getBookingId()%></td>
 									<td><%=appointment.getVehicletype()%></td>
 									<td><%=appointment.getVehicleservice()%></td>
@@ -80,16 +80,17 @@
 									<td><%=appointment.getBookingDate()%></td>
 									<td><%=appointment.getStreetAddress()%>,<%=appointment.getCity()%>,<%=appointment.getPostalCode()%></td>
 								</tbody>
+								<%
+								}
+								} else {
+								%>
+								<h1>No records found</h1>
+								<%
+								}
+								%>
 							</table>
 						</div>
-						          <%
-				}
-				} else {
-				%>
-				<h1>No records found</h1>
-				<%
-				}
-				%>
+
 					</div>
 				</div>
 			</main>

@@ -15,26 +15,58 @@
 <title>Live-On_signin_page</title>
 </head>
 <body>
-
-	<div class="container">
+		<%
+        String successmessage=(String)request.getAttribute("Successmessage");
+        String errormessage=(String)request.getAttribute("ErrorMessage");
+        
+        %>
+        
+        <%
+        
+        if(successmessage!=null){
+        
+        %>
+            
+        <p><%=successmessage %></p>
+           <%
+        
+        }%>
 		<!--     <img src="../assets/images/shape.png" class="square" alt="icon" /> -->
+	
+        
+	<div class="container">
 		<header>
 			<p>Login Form
 		</header>
 		<form action="LoginServlet" method="post" class="form">
 
 			<div class="input-box">
-				<label>Email Address</label> <input type="text" name="User_Email"
-					placeholder="Enter email address" required />
+				<label>Email Address</label> <input type=email name="User_Email"
+					placeholder="Enter email address"  required />
 			</div>
 			<div class="input-box">
-				<label>Password</label> <input type="password" name="User_Password"
+				<label>Password</label> <input type="password"  name="User_Password"
 					placeholder="Enter your password" required />
 			</div>
+	
+         <%
+        
+        
+           if(errormessage!=null){
+        
+        %>
+         <br>   
+        <p class="error">*<%=errormessage%></p>
+           <%
+        
+        }
+         
+        %>
 			<button type="submit">Submit</button>
 		</form>
 		<div class="signin">
 			<span>Create a Account?<a href="./registration.jsp">Sign up here</a></span>
+			<span>Sign in as a Partner<a href="./PartnerLogin.jsp">Here</a></span>
 		</div>
 	</div>
 

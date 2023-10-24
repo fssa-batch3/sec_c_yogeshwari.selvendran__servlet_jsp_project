@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fssa.liveon.exceptions.DAOException;
+import com.fssa.liveon.exceptions.InvalidUserDetailsException;
 import com.fssa.liveon.model.User;
 import com.fssa.liveon.service.UserService;
 
@@ -48,9 +50,13 @@ public class registrationServlet extends HttpServlet {
 				out.append("<h1>success</h1>");
 				System.out.println("successful");
 			}
-		} catch (DAOException | SQLException e) {
+		} catch (DAOException | SQLException |InvalidUserDetailsException e) {
 			e.printStackTrace();
-		}
+			request.setAttribute("ErrorMessage", e.getMessage());
+			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/registration.jsp");
+			dispatcher.forward(request, response);
+		}	
+		
 		response.sendRedirect(request.getContextPath() + "/login.jsp");
 		}
 

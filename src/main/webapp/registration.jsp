@@ -17,28 +17,31 @@
 <body>
 
 	<div class="container">
-
 		<!--     <img src="../assets/images/shape.png" class="square" alt="icon" /> -->
 		<header>
-			<p>Registration Form
+			<p>User Registration Form
 		</header>
 		<form action="userRegistration" method="post" class="form">
 			<div class="input-box">
 				<label>First Name</label> <input type="text" name="user_first_name"
-					placeholder="First name" required />
+					placeholder="First name" pattern="^[A-Za-z]{2,30}$"
+					title="First name should contains only alphabets and atleast of 2 charateers"
+					required />
 			</div>
 			<div class="input-box">
 				<label>Last Name</label> <input type="text" name="user_last_name"
-					placeholder="Last name" required />
+					placeholder="Last name" pattern="^[A-Za-z]{1,30}$"
+					title="Last name should contains only alphabets and atleast of 1 charateers"
+					required />
 			</div>
 			<div class="input-box">
-				<label>Email Address</label> <input type="text" name="user_email"
-					placeholder="Enter email address" required />
+				<label>Email Address</label> <input type="email" name="user_email"
+					placeholder="Enter email address" pattern ="^[A-Za-z0-9+_.-]+@(.+)$" required />
 			</div>
 			<div class="column">
 				<div class="input-box">
 					<label>Phone Number</label> <input type="tel" name="user_number"
-						placeholder="Enter phone number" required />
+						placeholder="Enter phone number"  pattern ="(0/91)?[7-9][0-9]{9}" title="Enter valid mobile number" required />
 				</div>
 
 
@@ -62,14 +65,44 @@
 			</div>
 			<div class="input-box">
 				<label>Password</label> <input type="password" name="user_password"
-					placeholder="Enter your password" required />
+					placeholder="Enter your password"
+					pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+					title="Passwor should contain atleast of one Uppercase , one lowerCase , one Number and a special charater"
+					required />
 			</div>
+			<%
+			String successmessage = (String) request.getAttribute("Successmessage");
+			String errormessage = (String) request.getAttribute("ErrorMessage");
+			%>
+
+			<%
+			if (successmessage != null) {
+			%>
+
+			<p><%=successmessage%></p>
+			<%
+			}
+			%>
+			<%
+			if (errormessage != null) {
+			%>
+			<br>
+			<p class="error">
+				*<%=errormessage%></p>
+			<%
+			}
+			%>
 			<button type="submit">Submit</button>
 		</form>
 		<div class="signin">
+		
 			<span>Already have an account?<a href="./login.jsp">Log in
 					here</a></span>
+					<span>Join as a PARTNER?<a href="./PartnerRegistration.jsp">Join
+					here</a></span>
 		</div>
+
+
 	</div>
 </body>
 </html>

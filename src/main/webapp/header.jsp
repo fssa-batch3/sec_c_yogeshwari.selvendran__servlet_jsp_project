@@ -1,3 +1,4 @@
+<%@ page import="com.fssa.liveon.model.*"%>
 <header>
 	<div class="center">
 		<div class="logo">
@@ -11,19 +12,31 @@
 		<ul class="cen-ul">
 			<li class="list"><a href="/liveon-web/home.jsp">Home</a></li>
 			<li class="list"><a href="/liveon-web/about.jsp">About</a></li>
+			<li class="list"><a href="/liveon-web/getAllShop">Shop</a></li>
 			<li class="list"><a href="/liveon-web/Appointment.jsp">Appointment</a>
 			</li>
-			<li class="list"><a
-				href="/liveon-web/AccessoriesServlet">Accessories</a></li>
+			<li class="list"><a href="/liveon-web/Accessories.jsp">Accessories</a></li>
 		</ul>
 	</div>
 	<div class="user">
 		<ul>
-			<li><i class="fa-solid fa-headset" style="color: #000000;"></i></li>
-			<li><a href="../../Page/Dashboard/wishlist.html"><i
-					class="fa-solid fa-cart-shopping"></i></a></li>
+			<%
+			User user = (User) session.getAttribute("loginUser");
+			boolean isLogin = user != null;
+			if (isLogin != false) {
+			%>
 			<li><a href="/liveon-web/ProfileServelt"><i
 					class="fa-solid fa-user" style="color: #000000;"></i></a></li>
+
+			<%
+			} else {
+			%>
+			<li><a href="/liveon-web/login.jsp"><button>login</button></a></li>
+			<%
+			}
+			%>
+
+
 		</ul>
 	</div>
 </header>
